@@ -8,7 +8,7 @@
 export default {
   data () {
     return {
-      msg: 'Hello Vue!'
+      msg: 'Bar'
     }
   }
 }
@@ -17,6 +17,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
-  color: #42b983;
+  color: rgb(245, 119, 28);
 }
 </style>
