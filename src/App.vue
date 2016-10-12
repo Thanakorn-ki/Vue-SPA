@@ -1,16 +1,17 @@
 <template>
   <div id="app">
     <h1>Hello App!</h1>
-    <p>
-      <!-- use router-link component for navigation. -->
-      <!-- specify the link by passing the `to` prop. -->
-      <!-- <router-link> will be rendered as an `<a>` tag by default -->
-      <router-link to="/foo">Go to Foo</router-link>
-      <router-link to="/bar">Go to Bar</router-link>
-    </p>
-    <!-- route outlet -->
-    <!-- component matched by the route will render here -->
-    <router-view></router-view>
+    <ul>
+      <li>
+        <router-link to="/foo">Go to Foo</router-link>
+      </li>
+      <li>
+        <router-link to="/bar">Go to Bar</router-link>
+      </li>
+    </ul>
+    <transition name="slide-fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -45,5 +46,21 @@ body {
 .logo {
   width: 100px;
   height: 100px
+}
+#app a.router-link-active {
+  color: #f66;
+}
+#app li.router-link-active a {
+  color: #f66;
+}
+.slide-fade-enter-active {
+  transition: all .2s ease;
+}
+.slide-fade-leave-active {
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-active {
+  padding-left: 10px;
+  opacity: 0;
 }
 </style>
